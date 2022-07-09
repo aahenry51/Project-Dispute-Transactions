@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useRef} from 'react';
 import {
   View,
   Text,
@@ -9,14 +9,29 @@ import {
   StatusBar,
   Alert,
 } from 'react-native';
+import {styles} from './LoginField.style';
 import {TLoginFieldProps} from './LoginField.type';
+
+const refUserName = useRef();
 
 export const LoginField: FC<TLoginFieldProps> = ({placeholder}) => {
   return (
-    <TextInput
-      placeholder="Your Username"
-      placeholderTextColor="#666666"
-      autoCapitalize="none"
-    />
+    <View style={styles.container}>
+      <Text style={styles.textTitle}>Username</Text>
+
+      <TouchableOpacity
+        onPress={() => {
+          refUserName.current.focus();
+        }}
+        style={styles.wrapper}>
+        <TextInput
+          ref={refUserName}
+          placeholder="Your Username"
+          placeholderTextColor="#666666"
+          autoCapitalize="none"
+          style={styles.textInput}
+        />
+      </TouchableOpacity>
+    </View>
   );
 };
