@@ -1,37 +1,37 @@
-import React, {FC, useRef} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  Platform,
-  StyleSheet,
-  StatusBar,
-  Alert,
-} from 'react-native';
+import React, {FC} from 'react';
+import {View, Text, TextInput, Alert} from 'react-native';
 import {styles} from './LoginField.style';
 import {TLoginFieldProps} from './LoginField.type';
 
-const refUserName = useRef();
-
-export const LoginField: FC<TLoginFieldProps> = ({placeholder}) => {
+export const LoginField: FC<TLoginFieldProps> = ({
+  emailPlaceholder = 'Your Email',
+  passwordPlaceholder = 'Your Password',
+  emailTextOnChange,
+  passwordTextOnChange,
+  emailTextValue,
+  passwordTextValue,
+  propsEmailTextbox,
+  propsPasswordTextbox,
+}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textTitle}>Username</Text>
-
-      <TouchableOpacity
-        onPress={() => {
-          refUserName.current.focus();
-        }}
-        style={styles.wrapper}>
-        <TextInput
-          ref={refUserName}
-          placeholder="Your Username"
-          placeholderTextColor="#666666"
-          autoCapitalize="none"
-          style={styles.textInput}
-        />
-      </TouchableOpacity>
+      <Text style={styles.textTitle}>Email</Text>
+      <TextInput
+        placeholder={emailPlaceholder}
+        style={styles.textInput}
+        onChangeText={emailTextOnChange}
+        value={emailTextValue}
+        {...propsEmailTextbox}
+      />
+      <Text style={styles.textTitle}>Password</Text>
+      <TextInput
+        placeholder={passwordPlaceholder}
+        secureTextEntry={true}
+        style={styles.textInput}
+        onChangeText={passwordTextOnChange}
+        value={passwordTextValue}
+        {...propsPasswordTextbox}
+      />
     </View>
   );
 };
