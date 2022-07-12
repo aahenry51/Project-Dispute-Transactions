@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, Button, Alert} from 'react-native';
 import {styles} from './LoginScreen.style';
-import {TLoginScreenViewProps} from './LoginScreentype';
+import {TLoginScreenViewProps} from './LoginScreen.type';
 import {LoginField} from '../../components';
 
 export const LoginScreenView: FC<TLoginScreenViewProps> = ({
