@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import {LoginField, TransactionList} from './src/components';
+import {LoginScreen} from './src/screens';
 
 const App = () => {
   const countries = [
@@ -84,7 +85,9 @@ const App = () => {
       info: 'Walmart transaction',
     },
   ];
-  return <TransactionList data={countries} />;
+  // return <TransactionList data={countries} />;
+
+  return <LoginScreen />;
 };
 
 export default App;
