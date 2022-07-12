@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import {LoginField, TransactionList} from './src/components';
+import {LoginField, TransactionList, DisputeForm} from './src/components';
 
 const App = () => {
   const countries = [
@@ -84,7 +84,7 @@ const App = () => {
       info: 'Walmart transaction',
     },
   ];
-  return <TransactionList data={countries} />;
+  return <DisputeForm />;
 };
 
 export default App;
