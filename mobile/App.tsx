@@ -11,6 +11,7 @@ import {
 
 import {LoginField, TransactionList} from './src/components';
 import {LoginScreen, TransactionScreen} from './src/screens';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   // return <TransactionList data={countries} />;
