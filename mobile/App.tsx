@@ -1,4 +1,4 @@
-import React, {type PropsWithChildren} from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -12,18 +12,21 @@ import {
 import {LoginField, TransactionList} from './src/components';
 import {Router} from './src/navigation/route/Router';
 import {LoginScreen, TransactionScreen} from './src/screens';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AppContext from './src/context/AppContext';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  // return <TransactionList data={countries} />;
+  const [loginValue, setLoginValue] = useState(false);
+
   return (
-    <NavigationContainer>
-      <Router />
-    </NavigationContainer>
+    <AppContext.Provider value={{loginValue, setLoginValue}}>
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
+    </AppContext.Provider>
   );
 };
 

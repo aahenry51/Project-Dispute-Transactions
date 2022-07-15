@@ -1,28 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {AuthNavigation} from '../authNavigation/AuthNavigation';
 import {AppNavigation} from '../appNavigation/AppNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import AppContext from '../../context/AppContext';
 
 export const Router = () => {
-  const [isUserInfo, changeIsUserInfo] = useState({});
+  const myContext = useContext(AppContext);
 
-  const isLoggedIn = async () => {
-    try {
-      userInfo = await AsyncStorage.getItem('userInfo');
-      userInfo = JSON.parse(userInfo);
+  //   const isLoggedIn = async () => {
+  //     try {
+  //       userInfo = await AsyncStorage.getItem('userInfo');
+  //       userInfo = JSON.parse(userInfo);
 
-      if (userInfo) {
-        changeIsUserInfo(userInfo);
-      } else {
-        changeIsUserInfo({});
-      }
-    } catch (e) {}
-  };
+  //       if (userInfo) {
+  //         myContext.setLoginValue(true);
+  //       } else {
+  //         myContext.setLoginValue(false);
+  //       }
+  //     } catch (e) {}
+  //   };
 
-  useEffect(() => {
-    console.log('async');
-    isLoggedIn();
-  }, []);
+  //   useEffect(() => {
+  //     console.log(myContext.loginValue);
+  //     isLoggedIn();
+  //   }, []);
 
-  return isUserInfo.token ? <AppNavigation /> : <AuthNavigation />;
+  return myContext.loginValue ? <AppNavigation /> : <AuthNavigation />;
 };

@@ -7,12 +7,13 @@ import {TransactionList} from '../../components';
 
 export const TransactionScreenView: FC<TTransactionScreenViewProps> = ({
   data,
+  logoutPress,
 }) => {
   return (
     <View style={styles.TransactionScreenViewContainer}>
-      <Button title={'Logout'} />
+      <Button title={'Logout'} onPress={logoutPress} />
       <View>
-        <TransactionList data={data} onPressItem={onPressItem} />
+        <TransactionList data={data} />
       </View>
     </View>
   );

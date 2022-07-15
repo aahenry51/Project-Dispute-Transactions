@@ -7,7 +7,6 @@ import {TTransactionListProps} from './TransactionList.type';
 export const TransactionList: FC<TTransactionListProps> = ({
   data,
   selectedID,
-  onPressItem = selectedID => {},
 }) => {
   const Item = ({item, onPress}) => (
     <TouchableOpacity onPress={onPress} style={styles.item}>

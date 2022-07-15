@@ -8,21 +8,21 @@ export const useHandleLogin: THandleLogin = async (
   changeIsLoading = () => {},
   email,
   password,
+  changeIsLogin = () => {},
 ) => {
-  console.log('try');
   const baseURL = 'http://10.0.2.2:8000/api' || 'http://0.0.0.0:8000/api';
   changeIsLoading(true);
   axios
     .post(`http://10.0.2.2:8000/api/login`, {email, password})
     .then(res => {
       const userInfo = res.data;
-      AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
       console.log(userInfo);
+      AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
+      changeIsLogin(true);
       setIsMessage('Login Success');
     })
     .catch(e => {
-      console.log(`login error ${e}`);
-      setIsMessage(`login error ${e}`);
+      setIsMessage(`${e}`);
       changeIsLoading(false);
     });
 };
