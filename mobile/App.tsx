@@ -16,7 +16,7 @@ import {NavigationContainer} from '@react-navigation/native';
 const App = () => {
   // return <TransactionList data={countries} />;
 
-  return <TransactionScreen />;
+  return <LoginScreen />;
 };
 
 export default App;

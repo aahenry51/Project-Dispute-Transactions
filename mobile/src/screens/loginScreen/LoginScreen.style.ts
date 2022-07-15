@@ -9,4 +9,9 @@ export const styles = StyleSheet.create({
     marginTop: 100,
     marginHorizontal: 50,
   },
+
+  loginScreenViewMessage: {
+    marginTop: 20,
+    marginHorizontal: 50,
+  },
 });
