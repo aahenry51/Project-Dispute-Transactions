@@ -10,7 +10,7 @@ export const TransactionScreenView: FC<TTransactionScreenViewProps> = ({
 }) => {
   return (
     <View style={styles.TransactionScreenViewContainer}>
-      <Text>Transactions</Text>
+      <Text>{'Transactions'}</Text>
       <View>
         <TransactionList data={data} onPressItem={onPressItem} />
       </View>
