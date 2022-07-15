@@ -6,4 +6,6 @@ export type TLoginScreenViewProps = {
   password: string;
   setPassword: () => void;
   onPress: () => void;
+  isLoading: boolean;
+  message: string;
 };

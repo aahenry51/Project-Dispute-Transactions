@@ -9,12 +9,13 @@ const routes_1 = require("./routes");
 const cors = require("cors");
 const app = (0, express_1.default)();
 app.use(cors());
+app.use(express_1.default.json({ limit: "5MB" }));
+app.use(express_1.default.urlencoded({ limit: "5MB", extended: true }));
 app.use("/api/login", routes_1.login);
-const PORT = process.env.PORT || 3000;
-const server = (0, express_1.default)();
-server.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Hello from Server");
 });
-server.listen(3000, () => {
-    console.log(`Server running on http://localhost:3000`);
+const port = 8000;
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:8000`);
 });
