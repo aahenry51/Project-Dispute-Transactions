@@ -17,7 +17,7 @@ exports.login.post("/", (request, response) => {
     try {
         const userFound = exports.userInfo.find((user) => user.email === request.body.email);
         !!userFound && userFound.password === request.body.password
-            ? response.status(200).send("Correct Credentials")
+            ? response.status(200).send(userFound)
             : response.status(400).send("Wrong Credentials");
     }
     catch (error) {

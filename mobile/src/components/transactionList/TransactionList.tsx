@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, View, Text, TouchableOpacity} from 'react-native';
-
+import {useNavigation} from '@react-navigation/native';
 import {styles} from './TransactionList.style';
 import {TTransactionListProps} from './TransactionList.type';
 
@@ -15,6 +15,7 @@ export const TransactionList: FC<TTransactionListProps> = ({
       <Text style={styles.subText}>{item.info}</Text>
     </TouchableOpacity>
   );
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -23,13 +24,9 @@ export const TransactionList: FC<TTransactionListProps> = ({
         renderItem={({item}) => (
           <Item
             item={item}
-            onPress={
-              (() => {
-                item.id;
-                selectedID = item.id;
-              },
-              onPressItem((selectedID = item.id)))
-            }
+            onPress={() => {
+              navigation.push('Information', {id: item.id});
+            }}
           />
         )}
         keyExtractor={item => item.id}

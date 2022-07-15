@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {TransactionScreen} from '../../screens';
+import {TransactionScreen, InfoScreen} from '../../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +13,7 @@ export const AppNavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Transactions" component={TransactionScreen} />
+      <Stack.Screen name="Information" component={InfoScreen} />
     </Stack.Navigator>
   );
 };

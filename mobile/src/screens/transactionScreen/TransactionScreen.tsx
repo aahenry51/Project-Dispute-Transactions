@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {View} from 'react-native';
 import {TransactionScreenView} from './TransactionScreen.view';
 import {TTransactionScreenProps} from './TransactionScreentype';
+import {useNavigation} from '@react-navigation/native';
 
 const countries = [
   {
@@ -77,6 +78,7 @@ const countries = [
 ];
 
 export const TransactionScreen: FC<TTransactionScreenProps> = ({}) => {
+  const navigation = useNavigation();
   return (
     <View>
       <TransactionScreenView data={countries} />

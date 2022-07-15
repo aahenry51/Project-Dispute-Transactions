@@ -1,6 +1,7 @@
 import React, {FC, createContext} from 'react';
 import {THandleLogin} from './apiHandle.type';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const useHandleLogin: THandleLogin = async (
   setIsMessage = () => {},
@@ -14,7 +15,8 @@ export const useHandleLogin: THandleLogin = async (
   axios
     .post(`http://10.0.2.2:8000/api/login`, {email, password})
     .then(res => {
-      let userInfo = res.data;
+      const userInfo = res.data;
+      AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
       console.log(userInfo);
       setIsMessage('Login Success');
     })
