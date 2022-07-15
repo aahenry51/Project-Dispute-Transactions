@@ -15,7 +15,7 @@ import {LoginScreen, TransactionScreen} from './src/screens';
 const App = () => {
   // return <TransactionList data={countries} />;
 
-  return <TransactionScreen />;
+  return <LoginScreen />;
 };
 
 export default App;
