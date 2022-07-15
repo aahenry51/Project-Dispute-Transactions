@@ -18,7 +18,7 @@ login.post("/", (request, response) => {
     );
 
     !!userFound && userFound.password === request.body.password
-      ? response.status(200).send("Correct Credentials")
+      ? response.status(200).send(userFound)
       : response.status(400).send("Wrong Credentials");
   } catch (error) {
     console.error(error);

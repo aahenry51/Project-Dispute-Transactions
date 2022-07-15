@@ -1,18 +1,19 @@
 import React, {FC} from 'react';
 import {View, Text, Button, Alert} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {styles} from './TransactionScreen.style';
 import {TTransactionScreenViewProps} from './TransactionScreen.type';
 import {TransactionList} from '../../components';
 
 export const TransactionScreenView: FC<TTransactionScreenViewProps> = ({
   data,
-  onPressItem,
+  logoutPress,
 }) => {
   return (
     <View style={styles.TransactionScreenViewContainer}>
-      <Text>{'Transactions'}</Text>
+      <Button title={'Logout'} onPress={logoutPress} />
       <View>
-        <TransactionList data={data} onPressItem={onPressItem} />
+        <TransactionList data={data} />
       </View>
     </View>
   );

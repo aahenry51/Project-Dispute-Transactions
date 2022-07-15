@@ -1,6 +1,6 @@
 // server/server.ts
 import express from "express";
-import { login } from "./routes";
+import { login, trans } from "./routes";
 
 const cors = require("cors");
 const app = express();
@@ -10,6 +10,7 @@ app.use(express.json({ limit: "5MB" }));
 app.use(express.urlencoded({ limit: "5MB", extended: true }));
 
 app.use("/api/login", login);
+app.use("/api/trans", trans);
 
 app.get("/", (req, res) => {
   res.send("Hello from Server");

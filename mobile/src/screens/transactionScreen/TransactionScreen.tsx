@@ -1,7 +1,10 @@
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
 import {View} from 'react-native';
 import {TransactionScreenView} from './TransactionScreen.view';
 import {TTransactionScreenProps} from './TransactionScreentype';
+import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AppContext from '../../context/AppContext';
 
 const countries = [
   {
@@ -77,9 +80,18 @@ const countries = [
 ];
 
 export const TransactionScreen: FC<TTransactionScreenProps> = ({}) => {
+  const navigation = useNavigation();
+  const myContext = useContext(AppContext);
+
+  const isLoggedOut = async () => {
+    AsyncStorage.removeItem('userInfo');
+
+    myContext.setLoginValue(false);
+  };
+
   return (
     <View>
-      <TransactionScreenView data={countries} />
+      <TransactionScreenView data={countries} logoutPress={isLoggedOut} />
     </View>
   );
 };
