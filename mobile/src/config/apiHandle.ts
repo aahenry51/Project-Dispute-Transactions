@@ -26,3 +26,20 @@ export const useHandleLogin: THandleLogin = async (
       changeIsLoading(false);
     });
 };
+
+export const useHandleTransactions: THandleLogin = async (
+  setTransValue = () => {},
+) => {
+  const baseURL = 'http://10.0.2.2:8000/api' || 'http://0.0.0.0:8000/api';
+  axios
+    .post(`http://10.0.2.2:8000/api/trans`, {})
+    .then(res => {
+      const TransInfo = res.data;
+
+      AsyncStorage.setItem('TransInfo', JSON.stringify(TransInfo));
+      setTransValue(TransInfo);
+    })
+    .catch(e => {
+      setIsMessage(`${e}`);
+    });
+};

@@ -20,9 +20,11 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [loginValue, setLoginValue] = useState(false);
+  const [transValue, setTransValue] = useState([]);
 
   return (
-    <AppContext.Provider value={{loginValue, setLoginValue}}>
+    <AppContext.Provider
+      value={{loginValue, setLoginValue, transValue, setTransValue}}>
       <NavigationContainer>
         <Router />
       </NavigationContainer>

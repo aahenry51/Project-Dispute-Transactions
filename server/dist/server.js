@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express_1.default.json({ limit: "5MB" }));
 app.use(express_1.default.urlencoded({ limit: "5MB", extended: true }));
 app.use("/api/login", routes_1.login);
+app.use("/api/trans", routes_1.trans);
 app.get("/", (req, res) => {
     res.send("Hello from Server");
 });
