@@ -19,6 +19,7 @@ export const TransactionList: FC<TTransactionListProps> = ({
   return (
     <View style={styles.container}>
       <FlatList
+        scrollEnabled={false}
         data={data}
         renderItem={({item}) => (
           <Item

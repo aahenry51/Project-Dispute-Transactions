@@ -1,0 +1,103 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.transactionInfo = void 0;
+exports.transactionInfo = [
+    {
+        id: "1",
+        name: "Hilpert-Hermann",
+        amount: "$102.88",
+        info: "1 Gina Point",
+        category: "Tools",
+    },
+    {
+        id: "2",
+        name: "Stracke and Sons",
+        amount: "$116.15",
+        info: "764 Fallview Trail",
+        category: "Baby",
+    },
+    {
+        id: "3",
+        name: "Padberg Inc",
+        amount: "$66.71",
+        info: "71 Independence Place",
+        category: "Games",
+    },
+    {
+        id: "4",
+        name: "Mraz, Schuster and Nicolas",
+        amount: "$46.52",
+        info: "629 Cherokee Plaza",
+        category: "Books",
+    },
+    {
+        id: "5",
+        name: "Fahey, Carter and Hackett",
+        amount: "$146.91",
+        info: "48700 Muir Junction",
+        category: "Computers",
+    },
+    {
+        id: "6",
+        name: "Sauer, Purdy and Hyatt",
+        amount: "$115.93",
+        info: "5 Dapin Circle",
+        category: "Electronics",
+    },
+    {
+        id: "7",
+        name: "Schneider Group",
+        amount: "$177.67",
+        info: "053 Dexter Place",
+        category: "Music",
+    },
+    {
+        id: "8",
+        name: "MacGyver, Rath and Armstrong",
+        amount: "$65.43",
+        info: "1638 Vernon Avenue",
+        category: "Electronics",
+    },
+    {
+        id: "9",
+        name: "Prohaska-Stiedemann",
+        amount: "$92.84",
+        info: "2 Thompson Park",
+        category: "Electronics",
+    },
+    {
+        id: "10",
+        name: "Cummerata and Sons",
+        amount: "$24.38",
+        info: "00 Caliangt Street",
+        category: "Grocery",
+    },
+    {
+        id: "11",
+        name: "Schuster, Schamberger and Larson",
+        amount: "$182.74",
+        info: "9087 Oriole Terrace",
+        category: "Beauty",
+    },
+    {
+        id: "12",
+        name: "Rempel, Koch and Kirlin",
+        amount: "$130.07",
+        info: "81 2nd Court",
+        category: "Movies",
+    },
+    {
+        id: "13",
+        name: "Renner, Mueller and Ziemann",
+        amount: "$93.06",
+        info: "086 Spaight Hill",
+        category: "Automotive",
+    },
+    {
+        id: "14",
+        name: "Mante-Halvorson",
+        amount: "$157.92",
+        info: "82 Crowley Trail",
+        category: "Toys",
+    },
+];
