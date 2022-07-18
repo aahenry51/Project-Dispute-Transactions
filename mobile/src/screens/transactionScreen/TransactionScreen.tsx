@@ -38,6 +38,8 @@ export const TransactionScreen: FC<TTransactionScreenProps> = ({}) => {
       transactionData();
       setIsTransValue(true);
       console.log(transValue);
+    } else {
+      myContext.setLoginValue(true);
     }
   }, []);
   return (
