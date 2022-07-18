@@ -25,7 +25,8 @@ export const TransactionList: FC<TTransactionListProps> = ({
           <Item
             item={item}
             onPress={() => {
-              navigation.push('Information', {id: item.id});
+              navigation.push('Information', {id: item});
+              selectedID;
             }}
           />
         )}
