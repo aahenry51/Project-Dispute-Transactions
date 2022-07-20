@@ -25,4 +25,5 @@ jobs:
       run: |
         cd server
         npm run build:server
+        npm start
         
