@@ -21,10 +21,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: go into folder
-      run: cd server
-      shell: bash
     - name: Build
       run: |
+        cd server
         npm run build:server
         
